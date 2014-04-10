@@ -5,7 +5,7 @@
 *.ps
 *.pdf
 *.Rproj
-
+*.html
 *.log
 *.aux
 *.bib
