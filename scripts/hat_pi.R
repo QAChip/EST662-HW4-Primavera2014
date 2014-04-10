@@ -53,13 +53,35 @@ PI2.anti=function(i,j){
   ) /2
 }
 # ---- \teta{Pi} ----
-x=randx(10000000)
+x=randx(1000)
 Teta=PI(i=x)
+
+# ---- teta{sigma2}.anti----
 Teta2=PI2(i=x)
 s2.teta=mean(Teta2)-mean(Teta)^2
 
+# ---- plot(Teta,m) ----
+Teta.n=cumsum(Teta)
+m=seq(1:length(Teta.n))
+En.Teta=Teta.n/m
+
+# ---- Plot ----
+plot(m, En.Teta, type="l", ylim=c(3.11,3.19))
+abline(h=pi, col="yellow")
+
 # ---- \teta{Pi}.anti ----
-x=randx.anti(10000000)
+x=randx.anti(5000)
 Teta.anti=PI.anti(i=x[,1],j=x[,2])
+
+# ---- teta{sigma2}.anti----
 Teta2.anti=PI2.anti(i=x[,1],j=x[,2])
 s2.teta.anti=mean(Teta2.anti)-mean(Teta.anti)^2
+
+# ---- plot(Teta.anti,m) ----
+Teta.n.anti=cumsum(Teta)
+m=seq(1:length(Teta.n.anti))
+En.Teta.anti=Teta.n.anti/m
+
+# ---- Plot.anti ----
+plot(m,En.Teta.anti,type="l", ylim=c(3.11,3.19))
+abline(h=pi, col="yellow")
