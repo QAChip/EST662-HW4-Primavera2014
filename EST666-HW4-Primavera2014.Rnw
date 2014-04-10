@@ -1,0 +1,38 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[round,authoryear]{natbib}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\decimalpoint
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Christian I. Ponce}
+\title{EST 662 Métodos computacionales en inferencia estadística - Tarea 4a}
+\begin{document}
+<<setup, echo=FALSE>>=
+library("knitr")
+library("xtable")
+opts_chunk$set(echo=TRUE, cache=TRUE, cache.path="cache/", fig.path="figures/", out.width="0.7\\linewidth", crop=TRUE, fig.width=10, fig.height=6, fig.align="center", fig.pos="h", dev=c("cairo_pdf","cairo_ps"), results="asis", message=FALSE, warning=FALSE)
+@
+<<scripts, echo=FALSE, cache=FALSE>>=
+read_chunk('scripts/mixnorm_em.R')
+read_chunk('scripts/hat_pi.R')
+@
+\maketitle
+\section{Mezcla de normales}
+\Sexpr{knit_child('ejercicios/mixnorm_em.Rnw')}
+\subsection{Estimación de parámetros}
+\Sexpr{knit_child('ejercicios/faithful.Rnw')}
+\subsection{Función de densidad de la mezcla de normales}
+\Sexpr{knit_child('ejercicios/histmixnorm.Rnw')}
+\section{Estimación de $\pi=\int_0^1 \frac{4}{1+x^2} dx$}
+\subsection{Muestreo de importancia}
+\Sexpr{knit_child('ejercicios/importance_sampling.Rnw')}
+\subsection{Variables antitéticas}
+\Sexpr{knit_child('ejercicios/antithetic_variables.Rnw')}
+\end{document}

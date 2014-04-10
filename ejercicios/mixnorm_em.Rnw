@@ -1,0 +1,19 @@
+La base de datos
+<<Faithful>>=
+@
+
+<<str, results="tex">>=
+str(faithful)
+@
+
+El siguiente \emph{script} se utilizó para estimar los 5 parámetros del modelo $\theta=(p,\mu_1,\mu_2, \sigma^2_1, \sigma^2_2)$; se debe especificar $n$, el número de iteraciones para la estimación y $\mathbf{x}$, el vector de observaciones.
+<<EM MixNorm>>=
+@
+
+La función soporte se utilizó para generar el vector $\mathbf{x}$ sobre el soporte de la función de densidad.
+<<Soporte.pi>>=
+@
+
+La función \texttt{dmixnorm($\theta$,i)} corresponde a la función de densidad de la mezcla de normales. Se debe alimentar con un vector de parámetros $\theta$ y un vector con el soporte $\mathbf{x}$.
+<<pdf mixnorm>>=
+@

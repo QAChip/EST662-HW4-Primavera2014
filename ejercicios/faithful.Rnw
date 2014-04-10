@@ -1,0 +1,23 @@
+\begin{enumerate}
+\item Para la variable \emph{eruptions}:
+<<HistFaithful1>>=
+@
+Los parámetros estimados son
+$
+\hat{\pi}=\Sexpr{round(teta$pr,4)}\;,
+\hat{\mu}_1=\Sexpr{round(teta$mu1,4)}\;,
+\hat{\mu}_2=\Sexpr{round(teta$mu2,4)}\;,
+\hat{\sigma}^2_1=\Sexpr{round(teta$s1,4)}\;,
+\hat{\sigma}^2_2=\Sexpr{round(teta$s2,4)}\;$.
+
+\item Para la variable \emph{waiting}:
+<<HistFaithful2>>=
+@
+Los parámetros estimados son
+$
+\hat{\pi}=\Sexpr{round(teta$pr,4)}\;,
+\hat{\mu}_1=\Sexpr{round(teta$mu1,4)}\;,
+\hat{\mu}_2=\Sexpr{round(teta$mu2,4)}\;,
+\hat{\sigma}^2_1=\Sexpr{round(teta$s1,4)}\;,
+\hat{\sigma}^2_2=\Sexpr{round(teta$s2,4)}\;$.
+\end{enumerate}

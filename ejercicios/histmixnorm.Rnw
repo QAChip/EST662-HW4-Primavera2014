@@ -1,0 +1,3 @@
+En la Figura~\ref{fig:PlotFaithful} se muestra la función de densidad trazada utilizando los parámetros estimados.
+<<PlotFaithful, fig.cap="Histograma y \\emph{pdf} de la DB \\emph{faithful}, para la variable \\emph{eruptions}(izquierda) y \\emph{waiting}(derecha)">>=
+@
