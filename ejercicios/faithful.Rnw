@@ -21,3 +21,5 @@ $
 \hat{\sigma}^2_1=\Sexpr{round(teta$s1,4)}\;,
 \hat{\sigma}^2_2=\Sexpr{round(teta$s2,4)}\;$.
 \end{enumerate}
+
+En ambos casos, se tuvo un máximo de $n=50$ iteraciones porque se alcanza la convergencia antes de ese valor.

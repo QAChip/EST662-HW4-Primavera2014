@@ -21,12 +21,14 @@ em.mixnorm=function(x,n){
      X[i,]=c(pr,m1,m2,s1,s2)
      teta<<-list(pr=pr,mu1=m1,mu2=m2,s1=s1,s2=s2)
    }# Cierra for(i in 1:n){
-   xtable(X)
+   #print(X)
    return(teta)
  }#Cierra function(x,n)
 
 # ---- Faithful ----
 attach(faithful)
+
+# ----PlotDB ----
 plot(faithful)
 
 # ---- pdf mixnorm ----
@@ -37,7 +39,7 @@ dmixnorm=function(Teta,i){
 
 # ---- Soporte.pi ----
 soporte=function(i,k){
-  #se puede selecciona 1 o 2 para i,
+  #Para i se puede selecciona 1 o 2 para las columnas de la DB,
   #k es el número de puntos a evaluar
   seq( range(faithful[,i])[1],
              range(faithful[,i])[2],

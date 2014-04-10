@@ -1,9 +1,13 @@
-La base de datos
+La base de datos contiene 2 variables \emph{eruptions} y \emph{waitings} y 227 observaciones. En la Figura~\ref{fig:PlotDB} claramente se observan dos grupos de observaciones.
 <<Faithful>>=
 @
 
 <<str, results="tex">>=
 str(faithful)
+summary(faithful)
+@
+
+<<PlotDB, fig.cap="Diagrama de dispersión entre las variables \\emph{eruptions} y \\emph{waitings} de la DB \\emph{faithful}">>=
 @
 
 El siguiente \emph{script} se utilizó para estimar los 5 parámetros del modelo $\theta=(p,\mu_1,\mu_2, \sigma^2_1, \sigma^2_2)$; se debe especificar $n$, el número de iteraciones para la estimación y $\mathbf{x}$, el vector de observaciones.
@@ -14,6 +18,6 @@ La función soporte se utilizó para generar el vector $\mathbf{x}$ sobre el sop
 <<Soporte.pi>>=
 @
 
-La función \texttt{dmixnorm($\theta$,i)} corresponde a la función de densidad de la mezcla de normales. Se debe alimentar con un vector de parámetros $\theta$ y un vector con el soporte $\mathbf{x}$.
+La función \texttt{dmixnorm($\theta$,i)} corresponde a la función de densidad de la mezcla de normales. Se debe alimentar con un vector de parámetros $\theta$ obtenido con la función \texttt{em.mixnorm()} y un vector $\mathbf{x}$ obtenido con la función \texttt{soporte()}.
 <<pdf mixnorm>>=
 @
