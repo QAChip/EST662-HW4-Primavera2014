@@ -1,4 +1,4 @@
-Se estimará $\pi=\theta=\int_0^1f(x)dx=\int_0^1\frac{4}{1+x^2}dx$ utilizando muestreo de importancia y $g(x)=\frac{2(2-x}{3}\;, 0<x<1$, como densidad instrumental.
+Se estimará $\pi=\theta=\int_0^1f(x)dx=\int_0^1\frac{4}{1+x^2}dx$ utilizando muestreo de importancia y $g(x)=\frac{2(2-x)}{3}\;, 0<x<1$, como densidad instrumental.
 <<g(x)>>=
 @
 <<f(x)>>=

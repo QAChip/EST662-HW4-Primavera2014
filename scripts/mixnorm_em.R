@@ -19,7 +19,9 @@ em.mixnorm=function(x,n){
      s1=sqrt(sum(p*(x-m1)^2)/s)
      s2=sqrt(sum((1-p)*(x-m2)^2)/(n-s))
      X[i,]=c(pr,m1,m2,s1,s2)
-     teta<<-list(pr=pr,mu1=m1,mu2=m2,s1=s1,s2=s2)
+     if(i==n){
+       teta<<-list(pr=pr,mu1=m1,mu2=m2,s1=s1,s2=s2)
+     }
    }# Cierra for(i in 1:n){
    #print(X)
    return(teta)
