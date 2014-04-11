@@ -2,7 +2,7 @@ Se utilizará el mismo método de inversión de la \emph{cdf}:
 $U=F_X(y)=\int_0^y \frac{2(2-x)}{3}dx\;, U\sim \mathcal{U}(0,1)$, pero en esta ocasión se obtendrán una muestra de pares de variables aleatorias antitéticas utilizando:
 $$X_1=2-\sqrt{4-3U}$$
 $$X_2=2-\sqrt{4-3(1-U)}$$
-<<rand.anti>>=
+<<randx.anti>>=
 @
 De este modo se obtiene una muestra de variables aleatorias con una alta correlación negativa
 
@@ -16,3 +16,17 @@ Con una muestra $n=1000$:
 <<muestra2>>=
 <<N muestra>>
 @
+Se aproxima la integral mediante una muestra aleatoria $\mathbf{x}=(\mathbf{x}_1,\mathbf{x}_2)$ de $X\sim g(x)$, se evalúa la función en $f(x_i)$ y se guarda en el vector $\theta$:
+<<hatPi.anti>>=
+@
+
+Con el código siguiente se estima la sucesión  $\mathrm{E}_{g(x)}[\theta]_n$ y la sucesión correspondiente para la varianza.
+<<En(Teta.anti)>>=
+@
+
+<<Plot.anti, fig.cap="Sucesión de estimaciones de $\\pi$">>=
+@
+
+En la Figura~\ref{fig:Plot.anti} se muestra la sucesión $\mathrm{E}_{g(x)}[\theta]_n$ utilizando variables antitéticas.
+
+Finalmente, tras $\Sexpr{n}$ iteraciones se tiene que $\hat{\pi}=\Sexpr{round(mean(Teta.anti),6)}$, con un error estándar $\sigma=\Sexpr{round(sqrt(mean(s2.teta.anti)),6)}$, el cual es menor que si no se utilizaran variables antitéticas, como era de esperarse.
