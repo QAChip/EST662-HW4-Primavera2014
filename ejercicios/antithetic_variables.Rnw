@@ -1,0 +1,18 @@
+Se utilizará el mismo método de inversión de la \emph{cdf}:
+$U=F_X(y)=\int_0^y \frac{2(2-x)}{3}dx\;, U\sim \mathcal{U}(0,1)$, pero en esta ocasión se obtendrán una muestra de pares de variables aleatorias antitéticas utilizando:
+$$X_1=2-\sqrt{4-3U}$$
+$$X_2=2-\sqrt{4-3(1-U)}$$
+<<rand.anti>>=
+@
+De este modo se obtiene una muestra de variables aleatorias con una alta correlación negativa
+
+Para la estimación de $\pi=E_{g(x)}[\theta]=\int_0^1 \frac{f(x)}{g(x)}g(x)dx$, utilizando variables antitéticas, la función en \emph{R} es:
+<<Pi.anti>>=
+@
+Para la varianza $\mathrm{Var}[\hat{\pi}]$, con la función \texttt{s2} se estima una sucesión de varianzas:
+<<hat.sigma2.anti>>=
+@
+Con una muestra $n=1000$:
+<<muestra2>>=
+<<N muestra>>
+@

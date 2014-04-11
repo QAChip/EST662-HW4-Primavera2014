@@ -33,6 +33,8 @@ read_chunk('scripts/hat_pi.R')
 \section{Estimación de $\pi=\int_0^1 \frac{4}{1+x^2} dx$}
 \subsection{Muestreo de importancia}
 \Sexpr{knit_child('ejercicios/importance_sampling.Rnw')}
+\subsection{Generador de $X\sim g(x)$}
+\Sexpr{knit_child('ejercicios/randx.Rnw')}
 \subsection{Variables antitéticas}
 \Sexpr{knit_child('ejercicios/antithetic_variables.Rnw')}
 \end{document}

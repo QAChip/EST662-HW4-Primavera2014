@@ -1,0 +1,35 @@
+Se utilizará el método de inversión de la \emph{cdf}:
+$U=F_X(y)=\int_0^y \frac{2(2-x)}{3}dx\;, U\sim \mathcal{U}(0,1)$.
+
+$$F_X(y)=-\frac{(y^2-4y)}{3}=U$$
+La cual tiene 2 raíces:
+$$F^{-1}_{X_1}(u)=2-\sqrt{4-3U}=X_1$$
+$$F^{-1}_{X_2}(u)=2+\sqrt{4-3U}=X_2$$
+de los cuales sólo $F^{-1}_{X_1}(u)$ genera valores $0<X<1$. Entonces, la función \texttt{randx()} genera variables aleatorias $X\sim g(x)$ a partir de $U\sim \mathcal{U}(0,1)$.
+<<randx>>=
+@
+
+Para la estimación de $\pi=E_{g(x)}[\theta]=\int_0^1 \frac{f(x)}{g(x)}g(x)dx$, la función en \emph{R} es:
+<<Pi>>=
+@
+Para la varianza $\mathrm{Var}[\hat{\pi}]$, con la función \texttt{s2} se estima una sucesión de varianzas:
+<<hat.sigma2>>=
+@
+Con una muestra $n=1000$:
+<<N muestra>>=
+@
+
+Se aproxima la integral mediante una muestra aleatoria $\mathbf{x}$ de $X\sim g(x)$, se evalúa la función en $f(x_i)$ y se guarda en el vector $\theta$:
+<<hat(Pi)>>=
+@
+
+Con el código siguiente se estima la sucesión  $\mathrm{E}_{g(x)}[\theta]_n$ y la sucesión correspondiente para la varianza.
+<<En(Teta)>>=
+@
+
+<<Plot, fig.cap="Sucesión de estimaciones de $\\pi$">>=
+@
+
+En la Figura~\ref{fig:Plot} se muestra la sucesión $\mathrm{E}_{g(x)}[\theta]_n$.
+
+Finalmente, tras $\Sexpr{n}$ iteraciones se tiene que $\hat{\pi}=\Sexpr{round(mean(Teta),6)}$, con un error estándar $\sigma=\Sexpr{round(sqrt(mean(s2.teta)),6)}$.
